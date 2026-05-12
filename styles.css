@@ -13,8 +13,8 @@
 /* Estilos generales */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #ffffff;
+    color: #000000;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -29,7 +29,7 @@ body {
 
 /* Header */
 header {
-    background-color: #ffffff;
+    background-color: #19b432;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -46,7 +46,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #007bff;
+    color: #ffffff;
 }
 
 nav ul {
@@ -60,13 +60,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #000000;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #007bff;
+    color: #ffffff;
+
 }
 
 /* Secciones principales */
@@ -75,7 +76,7 @@ section {
 }
 
 .hero {
-    background: linear-gradient(135deg, #007bff 0%, #28a745 100%);
+    background: linear-gradient(135deg, #02187c 0%, #28a745 100%);
     color: white;
     text-align: center;
     padding: 6rem 0;
@@ -96,7 +97,7 @@ section {
 .btn {
     display: inline-block;
     background-color: white;
-    color: #007bff;
+    color: #02187c;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 25px;
@@ -106,7 +107,7 @@ section {
 }
 
 .btn:hover {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
@@ -121,20 +122,20 @@ section {
 }
 
 .content h2 {
-    color: #007bff;
+    color: #02187c;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .content p {
     margin-bottom: 1rem;
-    color: #666;
+    color: #000000;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #19b432;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 2rem 0;
 }
