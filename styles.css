@@ -13,8 +13,8 @@
 /* Estilos generales */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #0b7dee;
+    color: #f6f3f3;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -29,7 +29,7 @@ body {
 
 /* Header */
 header {
-    background-color: #ffffff;
+    background-color: #0b0000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
