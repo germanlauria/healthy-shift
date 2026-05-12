@@ -1,168 +1,359 @@
-/* Estilo médico minimalista y lindo para Healthy Shift */
+/* ==========================================================================
+   IMPORTACIÓN DE FUENTES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Importar fuente Google Fonts para un look limpio */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* ==========================================================================
+   ESTILOS GLOBALES Y VARIABLES
+   ========================================================================== */
+:root {
+    --primary-blue: #2B6CB0;
+    --light-blue: #63B3ED;
+    --bg-gradient-start: #F0F4F8;
+    --bg-gradient-end: #E2E8F0;
+    --text-main: #2D3748;
+    --text-muted: #4A5568;
+    --white: #FFFFFF;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 15px 40px rgba(43, 108, 176, 0.15);
+    --radius-lg: 20px;
+    --radius-md: 12px;
+}
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Estilos generales */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    color: var(--text-main);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Contenedor principal */
-.container {
+main {
+    flex-grow: 1;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 0 20px;
+    width: 100%;
 }
 
-/* Header */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--light-blue), transparent);
+    margin: 40px 0;
+    opacity: 0.3;
+}
+
+/* ==========================================================================
+   ANIMACIONES
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicando la animación en cascada a las secciones */
+section {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+
+/* ==========================================================================
+   CABECERA Y NAVEGACIÓN
+   ========================================================================== */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
+    background: var(--white);
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    box-shadow: var(--shadow-soft);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo {
-    font-size: 1.5rem;
+/* Ícono de hospital inyectado en el logo */
+header h1::before {
+    content: '🏥 ';
+    font-size: 1.2em;
+}
+
+header h1 {
+    color: var(--primary-blue);
     font-weight: 700;
-    color: #007bff;
+    font-size: 1.8rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    gap: 15px;
 }
 
-nav ul li {
-    margin-left: 2rem;
-}
-
-nav ul li a {
+/* Efecto de expansión lateral en los enlaces */
+nav a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-muted);
     font-weight: 500;
+    padding: 10px 24px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
     transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #007bff;
-}
-
-/* Secciones principales */
-section {
-    padding: 4rem 0;
-}
-
-.hero {
-    background: linear-gradient(135deg, #007bff 0%, #28a745 100%);
-    color: white;
-    text-align: center;
-    padding: 6rem 0;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    font-weight: 300;
-}
-
-.btn {
     display: inline-block;
-    background-color: white;
-    color: #007bff;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
-.btn:hover {
-    background-color: #f8f9fa;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; /* Inicia oculto en el centro */
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    z-index: -1;
+    transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border-radius: 30px;
 }
 
-/* Contenido */
-.content {
-    background-color: #ffffff;
-    margin: 2rem 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
+nav a:hover::before {
+    width: 100%; /* Se expande hacia los bordes */
 }
 
-.content h2 {
-    color: #007bff;
-    margin-bottom: 1rem;
-    font-weight: 600;
+nav a:hover {
+    color: var(--white);
 }
 
-.content p {
-    margin-bottom: 1rem;
-    color: #666;
+/* ==========================================================================
+   TIPOGRAFÍA Y DECORACIÓN DE TÍTULOS
+   ========================================================================== */
+h1, h2, h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
+/* Línea decorativa bajo los títulos h2 */
+h2 {
+    position: relative;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   TARJETAS Y SECCIONES (Estilo general para los 3 archivos)
+   ========================================================================== */
+section, article {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 30px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: INDEX.HTML
+   ========================================================================== */
+#hero {
     text-align: center;
-    padding: 2rem 0;
+    /* Patrón sutil de fondo médico (puntos) */
+    background-image: radial-gradient(var(--light-blue) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: var(--white);
 }
 
-footer p {
-    font-weight: 300;
+#hero h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
+#hero img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    margin-top: 25px;
+    transition: transform 0.3s ease;
+}
 
-    nav ul {
-        margin-top: 1rem;
-    }
+#hero img:hover {
+    transform: scale(1.02);
+}
 
-    nav ul li {
-        margin-left: 0;
-        margin-right: 1rem;
-    }
+#servicios ul {
+    list-style: none;
+}
 
-    .hero h1 {
-        font-size: 2rem;
-    }
+#servicios li {
+    background: #F7FAFC;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-left: 5px solid var(--light-blue);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    transition: transform 0.2s ease;
+}
 
-    .hero p {
-        font-size: 1rem;
-    }
+#servicios li:hover {
+    transform: translateX(10px);
+    background: #EBF8FF;
+}
+
+#avisos {
+    background: linear-gradient(135deg, #FFF5F5, #FED7D7);
+    border-left: 5px solid #E53E3E;
+}
+
+#avisos h3 {
+    color: #C53030;
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: ABOUT.HTML
+   ========================================================================== */
+#mision-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+#mision-vision > div {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease;
+}
+
+#mision-vision > div:hover {
+    transform: translateY(-5px);
+}
+
+#mision-vision ul {
+    padding-left: 20px;
+}
+
+#mision-vision li {
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: CONTACT.HTML
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 500;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #E2E8F0;
+    border-radius: var(--radius-md);
+    background: #F7FAFC;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--light-blue);
+    background: var(--white);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(99, 179, 237, 0.2);
+}
+
+/* ==========================================================================
+   BOTONES GLOBALES
+   ========================================================================== */
+button, 
+input[type="submit"] {
+    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    color: var(--white);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+button:hover, 
+input[type="submit"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(43, 108, 176, 0.4);
+    filter: brightness(1.1);
+}
+
+button:active, 
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--white);
+    color: var(--text-muted);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.03);
+    margin-top: auto;
+    font-size: 0.9rem;
 }
