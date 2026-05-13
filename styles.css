@@ -1,169 +1,90 @@
-/* Estilo médico minimalista y lindo para Healthy Shift */
-
-/* Importar fuente Google Fonts para un look limpio */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilos generales */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-/* Contenedor principal */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header */
-header {
-    background-color: #19b432;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* HEADER */
+header{
+    background: linear-gradient(90deg, #ffffff, #dbeafe);
     padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-.logo {
-    font-size: 1.5rem;
+/* LOGO */
+.logo{
+    color: #02187c;
+    font-size: 2rem;
     font-weight: 700;
-    color: #ffffff;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 2rem;
-}
-
-nav ul li a {
+/* LINKS DEL NAV */
+nav a{
+    color: #02187c;
     text-decoration: none;
-    color: #000000;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
-nav ul li a:hover {
-    color: #ffffff;
-
+nav a:hover{
+    color: #2563eb;
 }
 
-/* Secciones principales */
-section {
-    padding: 4rem 0;
-}
-
-.hero {
-    background: linear-gradient(135deg, #02187c 0%, #28a745 100%);
-    color: white;
+/* HERO */
+.hero{
+    background: linear-gradient(135deg, #ffffff, #dbeafe, #93c5fd);
+    color: #02187c;
     text-align: center;
-    padding: 6rem 0;
+    padding: 6rem 2rem;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
-.hero h1 {
+/* TITULO HERO */
+.hero h1{
     font-size: 3rem;
     margin-bottom: 1rem;
-    font-weight: 700;
+    color: #02187c;
 }
 
-.hero p {
+/* TEXTO HERO */
+.hero p{
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    font-weight: 300;
+    color: #1e3a8a;
 }
 
-.btn {
-    display: inline-block;
-    background-color: white;
+/* BOTONES */
+.btn{
+    display:inline-block;
+    margin-top:1.5rem;
+    padding:1rem 2rem;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+
+    color:white;
+    transition:0.3s;
+    box-shadow:0 10px 20px rgba(37,99,235,0.2);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 25px rgba(37,99,235,0.3);
+
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+/* TITULOS */
+h2{
+    color:#02187c;
+}
+
+h3{
+    color:#2563eb;
+}
+
+/* FOOTER */
+footer{
+    background: linear-gradient(90deg, #dbeafe, #93c5fd);
     color: #02187c;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn:hover {
-    background-color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Contenido */
-.content {
-    background-color: #ffffff;
-    margin: 2rem 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-}
-
-.content h2 {
-    color: #02187c;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.content p {
-    margin-bottom: 1rem;
-    color: #000000;
-}
-
-/* Footer */
-footer {
-    background-color: #19b432;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 2rem 0;
-}
-
-footer p {
-    font-weight: 300;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav ul {
-        margin-top: 1rem;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-right: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
+    text-align:center;
+    padding:2rem;
+    margin-top:4rem;
 }
