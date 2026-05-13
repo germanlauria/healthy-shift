@@ -4,18 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* ==========================================================================
-   ESTILOS GLOBALES Y VARIABLES
+   ESTILOS GLOBALES Y VARIABLES - PALETA NARANJA Y AZUL
    ========================================================================== */
 :root {
-    --primary-blue: #2B6CB0;
-    --light-blue: #63B3ED;
-    --bg-gradient-start: #F0F4F8;
-    --bg-gradient-end: #E2E8F0;
+    --primary-orange: #FF782D;      /* Naranja principal */
+    --light-orange: #FFB38A;        /* Naranja suave para efectos */
+    --deep-blue: #1A365D;           /* Azul profundo para texto y contraste */
+    --bg-gradient-start: #FFF9F5;   /* Fondo cálido muy sutil */
+    --bg-gradient-end: #F0F4F8;     /* Mezcla suave con gris azulado */
     --text-main: #2D3748;
-    --text-muted: #4A5568;
+    --text-muted: #718096;
     --white: #FFFFFF;
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 15px 40px rgba(43, 108, 176, 0.15);
+    --shadow-soft: 0 10px 30px rgba(255, 120, 45, 0.08);
+    --shadow-hover: 0 15px 40px rgba(26, 54, 93, 0.15);
     --radius-lg: 20px;
     --radius-md: 12px;
 }
@@ -47,7 +48,7 @@ main {
 hr {
     border: none;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--light-blue), transparent);
+    background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
     margin: 40px 0;
     opacity: 0.3;
 }
@@ -66,7 +67,6 @@ hr {
     }
 }
 
-/* Aplicando la animación en cascada a las secciones */
 section {
     animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
@@ -91,14 +91,13 @@ header {
     z-index: 1000;
 }
 
-/* Ícono de hospital inyectado en el logo */
 header h1::before {
     content: '🏥 ';
     font-size: 1.2em;
 }
 
 header h1 {
-    color: var(--primary-blue);
+    color: var(--deep-blue);
     font-weight: 700;
     font-size: 1.8rem;
 }
@@ -109,11 +108,10 @@ nav ul {
     gap: 15px;
 }
 
-/* Efecto de expansión lateral en los enlaces */
 nav a {
     text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
+    color: var(--deep-blue);
+    font-weight: 600;
     padding: 10px 24px;
     border-radius: 30px;
     position: relative;
@@ -129,16 +127,16 @@ nav a::before {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 0; /* Inicia oculto en el centro */
+    width: 0;
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    background: linear-gradient(90deg, var(--primary-orange), var(--light-orange));
     z-index: -1;
     transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     border-radius: 30px;
 }
 
 nav a:hover::before {
-    width: 100%; /* Se expande hacia los bordes */
+    width: 100%;
 }
 
 nav a:hover {
@@ -146,14 +144,13 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   TIPOGRAFÍA Y DECORACIÓN DE TÍTULOS
+   TIPOGRAFÍA Y DECORACIÓN
    ========================================================================== */
 h1, h2, h3 {
-    color: var(--primary-blue);
+    color: var(--deep-blue);
     margin-bottom: 15px;
 }
 
-/* Línea decorativa bajo los títulos h2 */
 h2 {
     position: relative;
     padding-bottom: 12px;
@@ -167,12 +164,12 @@ h2::after {
     bottom: 0;
     height: 4px;
     width: 60px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    background: linear-gradient(90deg, var(--primary-orange), var(--light-orange));
     border-radius: 4px;
 }
 
 /* ==========================================================================
-   TARJETAS Y SECCIONES (Estilo general para los 3 archivos)
+   TARJETAS
    ========================================================================== */
 section, article {
     background: var(--white);
@@ -189,19 +186,18 @@ section:hover {
 }
 
 /* ==========================================================================
-   ESTILOS ESPECÍFICOS: INDEX.HTML
+   ESPECÍFICOS: INDEX.HTML
    ========================================================================== */
 #hero {
     text-align: center;
-    /* Patrón sutil de fondo médico (puntos) */
-    background-image: radial-gradient(var(--light-blue) 1px, transparent 1px);
+    background-image: radial-gradient(var(--light-orange) 1px, transparent 1px);
     background-size: 20px 20px;
     background-color: var(--white);
 }
 
 #hero h1 {
     font-size: 2.5rem;
-    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    background: linear-gradient(90deg, var(--deep-blue), var(--primary-orange));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -212,28 +208,21 @@ section:hover {
     box-shadow: var(--shadow-soft);
     margin-top: 25px;
     transition: transform 0.3s ease;
-}
-
-#hero img:hover {
-    transform: scale(1.02);
-}
-
-#servicios ul {
-    list-style: none;
+    border: 5px solid var(--white);
 }
 
 #servicios li {
-    background: #F7FAFC;
+    background: #FFF9F5;
     margin-bottom: 15px;
     padding: 15px 20px;
-    border-left: 5px solid var(--light-blue);
+    border-left: 5px solid var(--primary-orange);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     transition: transform 0.2s ease;
 }
 
 #servicios li:hover {
     transform: translateX(10px);
-    background: #EBF8FF;
+    background: #FFF0E6;
 }
 
 #avisos {
@@ -246,79 +235,29 @@ section:hover {
 }
 
 /* ==========================================================================
-   ESTILOS ESPECÍFICOS: ABOUT.HTML
+   ESPECÍFICOS: CONTACT.HTML
    ========================================================================== */
-#mision-vision {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-}
-
-#mision-vision > div {
-    background: var(--white);
-    padding: 30px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.3s ease;
-}
-
-#mision-vision > div:hover {
-    transform: translateY(-5px);
-}
-
-#mision-vision ul {
-    padding-left: 20px;
-}
-
-#mision-vision li {
-    margin-bottom: 10px;
-}
-
-/* ==========================================================================
-   ESTILOS ESPECÍFICOS: CONTACT.HTML
-   ========================================================================== */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
 label {
     font-weight: 500;
-    color: var(--primary-blue);
+    color: var(--deep-blue);
     margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #E2E8F0;
-    border-radius: var(--radius-md);
-    background: #F7FAFC;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    margin-bottom: 20px;
-    font-size: 1rem;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: var(--light-blue);
+    border-color: var(--primary-orange);
     background: var(--white);
     outline: none;
-    box-shadow: 0 0 0 4px rgba(99, 179, 237, 0.2);
+    box-shadow: 0 0 0 4px rgba(255, 120, 45, 0.2);
 }
 
 /* ==========================================================================
-   BOTONES GLOBALES
+   BOTONES
    ========================================================================== */
 button, 
 input[type="submit"] {
-    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    background: linear-gradient(135deg, var(--deep-blue), var(--primary-orange));
     color: var(--white);
     border: none;
     padding: 14px 30px;
@@ -326,7 +265,7 @@ input[type="submit"] {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    transition: all 0.3s ease;
     display: inline-block;
     margin-top: 10px;
     margin-right: 15px;
@@ -335,13 +274,8 @@ input[type="submit"] {
 button:hover, 
 input[type="submit"]:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(43, 108, 176, 0.4);
+    box-shadow: 0 10px 25px rgba(255, 120, 45, 0.3);
     filter: brightness(1.1);
-}
-
-button:active, 
-input[type="submit"]:active {
-    transform: translateY(0);
 }
 
 /* ==========================================================================
@@ -351,9 +285,10 @@ footer {
     text-align: center;
     padding: 25px;
     background: var(--white);
-    color: var(--text-muted);
+    color: var(--deep-blue);
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.03);
     margin-top: auto;
     font-size: 0.9rem;
+    font-weight: 500;
 }
