@@ -9,11 +9,11 @@
 :root {
     --primary-blue: #246a32;
     --light-blue: #63ed93;
-    --bg-gradient-start: #f8f0f5;
-    --bg-gradient-end: #E2E8F0;
+    --bg-gradient-start: #ffbede;
+    --bg-gradient-end: #bdffd5;
     --text-main: #92106b;
     --text-muted: #ae408d;
-    --white: #FFFFFF;
+    --white: #e1e8e0;
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
     --shadow-hover: 0 15px 40px rgba(36, 106, 50, 0.15);
     --radius-lg: 20px;
