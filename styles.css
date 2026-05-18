@@ -7,15 +7,15 @@
    ESTILOS GLOBALES Y VARIABLES
    ========================================================================== */
 :root {
-    --primary-blue: #2B6CB0;
-    --light-blue: #63B3ED;
-    --bg-gradient-start: #F0F4F8;
+    --primary-blue: #246a32;
+    --light-blue: #63ed93;
+    --bg-gradient-start: #f8f0f5;
     --bg-gradient-end: #E2E8F0;
-    --text-main: #2D3748;
-    --text-muted: #4A5568;
+    --text-main: #92106b;
+    --text-muted: #ae408d;
     --white: #FFFFFF;
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 15px 40px rgba(43, 108, 176, 0.15);
+    --shadow-hover: 0 15px 40px rgba(36, 106, 50, 0.15);
     --radius-lg: 20px;
     --radius-md: 12px;
 }
@@ -223,7 +223,7 @@ section:hover {
 }
 
 #servicios li {
-    background: #F7FAFC;
+    background: #f7fcf7;
     margin-bottom: 15px;
     padding: 15px 20px;
     border-left: 5px solid var(--light-blue);
@@ -233,16 +233,16 @@ section:hover {
 
 #servicios li:hover {
     transform: translateX(10px);
-    background: #EBF8FF;
+    background: #ffebf7;
 }
 
 #avisos {
     background: linear-gradient(135deg, #FFF5F5, #FED7D7);
-    border-left: 5px solid #E53E3E;
+    border-left: 5px solid #e53e94;
 }
 
 #avisos h3 {
-    color: #C53030;
+    color: #c5305a;
 }
 
 /* ==========================================================================
@@ -310,7 +310,7 @@ textarea:focus {
     border-color: var(--light-blue);
     background: var(--white);
     outline: none;
-    box-shadow: 0 0 0 4px rgba(99, 179, 237, 0.2);
+    box-shadow: 0 0 0 4px rgba(237, 99, 170, 0.2);
 }
 
 /* ==========================================================================
@@ -335,7 +335,7 @@ input[type="submit"] {
 button:hover, 
 input[type="submit"]:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(43, 108, 176, 0.4);
+    box-shadow: 0 10px 25px rgba(52, 176, 43, 0.4);
     filter: brightness(1.1);
 }
 
