@@ -4,18 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* ==========================================================================
-   ESTILOS GLOBALES Y VARIABLES (Modificado: Rojo Borgoña y Verde Oliva Medio Oscuro)
+   ESTILOS GLOBALES Y VARIABLES (Modificado: Tres colores bien visibles)
    ========================================================================== */
 :root {
     --primary-blue: #801E1E;       /* Rojo Borgoña Profundo (Elegante y atenuado) */
     --light-blue: #3B5334;         /* Verde Oliva Medio Oscuro (Natural y descansado) */
+    --accent-blue: #2A6F97;        /* Azul Clínico/Médico (El color que tú agregaste) */
     --bg-gradient-start: #FAF8F5;  /* Crema Lino muy suave para evitar reflejos de luz blanca */
     --bg-gradient-end: #EFECE6;    /* Arena sutil que relaja la vista en todo el fondo */
     --text-main: #332C2C;          /* Gris cálido casi marrón (Mucho más suave para leer que el negro puro) */
     --text-muted: #5C5454;         /* Texto secundario apagado para mantener bajo contraste */
     --white: #FFFFFF;
     --shadow-soft: 0 10px 30px rgba(128, 30, 30, 0.02);
-    --shadow-hover: 0 15px 40px rgba(59, 83, 52, 0.06); /* Sombra muy tenue basada en el verde oliva */
+    --shadow-hover: 0 15px 40px rgba(59, 83, 52, 0.08); /* Sombra basada en el verde oliva */
     --radius-lg: 20px;
     --radius-md: 12px;
 }
@@ -46,10 +47,11 @@ main {
 
 hr {
     border: none;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--light-blue), transparent);
+    height: 3px;
+    /* Línea divisoria: Ahora transiciona por los tres colores claramente */
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue), var(--accent-blue));
     margin: 40px 0;
-    opacity: 0.2;
+    opacity: 0.4;
 }
 
 /* ==========================================================================
@@ -128,7 +130,8 @@ nav a::before {
     transform: translateX(-50%);
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    /* Menú: Ahora el fondo al pasar el cursor combina los tres colores en degradado */
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue), var(--accent-blue));
     z-index: -1;
     transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     border-radius: 30px;
@@ -162,8 +165,9 @@ h2::after {
     left: 0;
     bottom: 0;
     height: 4px;
-    width: 60px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    width: 80px;
+    /* Subrayados: Pasa por Rojo, Verde y Azul */
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue), var(--accent-blue));
     border-radius: 4px;
 }
 
@@ -180,7 +184,7 @@ section, article {
 }
 
 section:hover {
-    transform: translateY(-4px); /* Movimiento suave y sutil */
+    transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
 }
 
@@ -189,15 +193,17 @@ section:hover {
    ========================================================================== */
 #hero {
     text-align: center;
-    background-image: radial-gradient(var(--light-blue) 1px, transparent 1px);
-    background-size: 20px 20px;
+    /* Fondo punteado: Usa el Verde Oliva de tu compañero */
+    background-image: radial-gradient(var(--light-blue) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
     background-color: var(--white);
     opacity: 0.9;
 }
 
 #hero h1 {
     font-size: 2.5rem;
-    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    /* Título principal: Muestra el degradado de los tres colores */
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue), var(--accent-blue));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -219,21 +225,22 @@ section:hover {
 }
 
 #servicios li {
-    background: #F7F5F0; /* Fondo sutil que acompaña la calidez de la página */
+    /* Lista de servicios: Muestra el verde oliva claramente */
+    background: #F4F6F3; /* Fondo sutil con un toque verde oliva */
     margin-bottom: 15px;
     padding: 15px 20px;
-    border-left: 5px solid var(--light-blue); /* Borde verde oliva */
+    border-left: 5px solid var(--light-blue); /* Borde verde oliva fuerte */
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 #servicios li:hover {
     transform: translateX(6px);
-    background: #EDEAE1; /* Resalte oliva muy suave en hover */
+    background: #E6EBE4; /* Verde oliva un poco más notable en hover */
 }
 
 #avisos {
-    /* Caja de avisos en un tono terracota apagado ultra-lavado, muy cómodo a la vista */
+    /* Caja de avisos: Mantiene el rojo/terracota original */
     background: linear-gradient(135deg, #FAF0F0, #F3E2E2);
     border-left: 5px solid var(--primary-blue);
 }
@@ -305,10 +312,11 @@ textarea {
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: var(--light-blue);
+    /* Input seleccionado: Destaca con tu color azul clínico */
+    border-color: var(--accent-blue);
     background: var(--white);
     outline: none;
-    box-shadow: 0 0 0 4px rgba(59, 83, 52, 0.08); /* Enfoque suave con tono verde oliva */
+    box-shadow: 0 0 0 4px rgba(42, 111, 151, 0.08);
 }
 
 /* ==========================================================================
@@ -316,7 +324,8 @@ textarea:focus {
    ========================================================================== */
 button, 
 input[type="submit"] {
-    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    /* Botones principales: Hacen un degradado que va del Rojo al Azul */
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
     color: var(--white);
     border: none;
     padding: 14px 30px;
@@ -333,8 +342,8 @@ input[type="submit"] {
 button:hover, 
 input[type="submit"]:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(128, 30, 30, 0.12); /* Sombra difusa e inofensiva */
-    filter: brightness(1.04); /* Resalte sumamente suave */
+    box-shadow: 0 10px 25px rgba(128, 30, 30, 0.12);
+    filter: brightness(1.04);
 }
 
 button:active, 
